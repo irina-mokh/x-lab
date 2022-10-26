@@ -1,7 +1,7 @@
-export const Addresspage = () => {
-	return (
-	<>
-		<h2>Addresspage</h2>
-	</>
-	)
-}
+export const AddressPage = () => {
+  return (
+    <>
+      <h2>Address Page</h2>
+    </>
+  );
+};
