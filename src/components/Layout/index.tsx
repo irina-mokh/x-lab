@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import { Navbar } from '../Navbar';
+import { Menu } from '../Menu';
 
 export function Layout() {
   return (
     <>
       <Header></Header>
       <main className="main">
-        <Navbar />
+        <Menu />
         <Outlet />
       </main>
       <Footer />

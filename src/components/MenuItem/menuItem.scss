@@ -1,0 +1,71 @@
+@use '../../styles/vars';
+
+.menu-item {
+	display: flex;
+	align-items: center;
+	margin: 0 0 38px 0;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 600;
+	color: vars.$dark;
+	overflow: hidden;
+	padding: 1px 20px 1px 0;
+	&:hover {
+		color: vars.$blue;
+		.menu-item__dropdown {
+			border-color: vars.$blue transparent transparent  
+		transparent;
+		}
+	}
+
+	&_parent {
+		margin-bottom: 32px;
+	}
+
+	&__ico {
+		display: block;
+		width: 32px;
+		height: 32px;
+	}
+
+	&__text {
+		margin-left: 16px;
+		flex-grow: 1;
+	}
+
+	&_active {
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			right: -3px;
+			top: 0;
+			height: 100%;
+			width: 6px;
+			background-color: vars.$blue;
+			border-radius: 3px;
+		}
+	}
+
+	&__dropdown {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 15px 7.5px 0 7.5px;
+		border-color: vars.$gray transparent transparent  
+		transparent;
+		z-index: 2;
+		transition: transform 0.3s ease;
+		background-clip: content-box;
+
+		&_opened{
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.menu__sublist {
+	.menu-item {
+		margin-bottom: 28px;
+	}
+}
