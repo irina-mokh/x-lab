@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from '../Header';
-import { Footer } from '../Footer';
 import { Menu } from '../Menu';
 import { SideBar } from '../SideBar';
 import { useState } from 'react';
@@ -29,7 +28,6 @@ export function Layout() {
           <Outlet />
         </div>
       </main>
-      <Footer />
     </>
   );
 }

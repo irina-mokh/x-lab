@@ -1,6 +1,8 @@
 @use '../../styles/vars';
 
 .header {
+	position: sticky;
+	top: 0;
 	width: 100%;
 	height: 80px;
 	background-color: vars.$blue;
