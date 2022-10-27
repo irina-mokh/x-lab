@@ -1,0 +1,64 @@
+@use '../../styles/vars';
+.addresspage {
+	&__subheading {
+		margin: 0 0 16px 0;
+		font-family: 'Montserrat-Bold';
+		// font-weight: 700;
+		line-height: 32px;
+		font-size: 26px;
+	}
+	&__results {
+		padding: 24px;
+		box-shadow: 0px 2px 8px rgba(2, 0, 97, 0.25);
+		border-radius: 10px;
+	}
+	&__result {
+		list-style: none;
+	}
+}
+.searchbar {
+	display: flex;
+	width: 100%;
+	height: 70px;
+	margin: 24px 0 32px 0;
+	&__field {
+		flex-grow: 1;
+		border: 3px solid vars.$blue;
+		border-radius: 10px;
+		font-family: inherit;
+		font-size: inherit;
+		padding: 0 24px;
+		outline: none;
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+	
+	&__btn {
+		margin: 0 0 0 24px;
+		padding: 0 40px 0 88px;
+		border-radius: 10px;
+		border: none;
+		color: vars.$white;
+		font-size: 26px;
+		font-family: 'Montserrat-Bold';
+		background-color: vars.$blue;
+		position: relative;
+		&::before {
+			content: '';
+			background:  url('../../assets/icons/search.svg');
+			position: absolute;
+			display: inline-block;
+			z-index: 5;
+			width: 32px;
+			height: 32px;
+			left: 40px;
+			filter: invert(99%) sepia(0%) saturate(2467%) hue-rotate(69deg) brightness(117%) contrast(100%);
+
+		}
+
+	}
+}
