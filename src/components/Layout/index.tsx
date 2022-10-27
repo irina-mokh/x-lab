@@ -9,7 +9,9 @@ export function Layout() {
       <Header></Header>
       <main className="main">
         <Menu />
-        <Outlet />
+        <div className="page">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </>

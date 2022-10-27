@@ -82,7 +82,7 @@ const items = menu.map((item) => (
 export const Menu = () => {
   return (
     <nav className="menu">
-      <h3 className="menu__header">Menu</h3>
+      <h3 className="menu__header">Меню</h3>
       <ul>{items}</ul>
     </nav>
   );

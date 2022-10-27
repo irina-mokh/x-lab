@@ -1,12 +1,13 @@
 @use './vars';
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../assets//fonts/Montserrat-Regular.woff');
+  font-family: 'Montserrat-Medium';
+  font-weight: 500;
+  src: url('../assets//fonts/Montserrat-Medium.woff');
 }
 @font-face {
-  font-family: 'Montserrat';
-  font-weight: bold;
+  font-family: 'Montserrat-Bold';
+  font-weight: 700;
   src: url('../assets//fonts/Montserrat-Bold.woff');
 }
 
@@ -18,7 +19,9 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat-Medium';
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .visually-hidden {
@@ -33,4 +36,25 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.page {
+  padding: 32px;
+  &__heading {
+    margin-bottom: 16px;
+    font-size: 26px;
+    font-family: 'Montserrat-Bold';
+  }
+  &__subheading {
+    font-weight: 500;
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+  &__text {
+    font-weight: 500;
+    line-height: 24.38px;
+    margin-bottom: 22px;
+    color: vars.$black;
+  }
+}
+
 
