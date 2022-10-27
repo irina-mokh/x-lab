@@ -107,6 +107,7 @@ export interface Data {
 export const AddressPage = () => {
   const [addresses, setAddresses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const results = addresses.map((item: IAddress) => (
     <li key={item.data.region_fias_id} className="addresspage__result">
@@ -121,28 +122,32 @@ export const AddressPage = () => {
     };
 
     const query = target.search.value;
-    setIsLoading(true);
-    const url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
+    if (query.length < 3) {
+      setError('Введите минимум 3 символа');
+    } else {
+      setIsLoading(true);
+      const url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: 'Token ' + token,
-      },
-      body: JSON.stringify({ query: query }),
-    };
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: 'Token ' + token,
+        },
+        body: JSON.stringify({ query: query }),
+      };
 
-    fetch(url, options)
-      .then((response) => response.text())
-      .then((result) => {
-        const data = JSON.parse(result);
-        setAddresses(data.suggestions);
-      })
-      .catch((error) => console.log('error', error));
+      fetch(url, options)
+        .then((response) => response.text())
+        .then((result) => {
+          const data = JSON.parse(result);
+          setAddresses(data.suggestions);
+        })
+        .catch((error) => console.log('error', error));
 
-    setIsLoading(false);
+      setIsLoading(false);
+    }
   };
   return (
     <section className="addresspage">
@@ -155,10 +160,16 @@ export const AddressPage = () => {
           name="search"
           autoComplete="off"
           placeholder="Введите интересующий вас адрес"
+          onChange={(e) => {
+            if (e.target.value.length >= 3) {
+              setError('');
+            }
+          }}
         />
         <button type="submit" className="searchbar__btn">
           Поиск
         </button>
+        {error && <p className="searchbar__error">{error}</p>}
       </form>
       {addresses.length > 0 && (
         <div className="addresspage__results">

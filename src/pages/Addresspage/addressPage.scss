@@ -17,6 +17,7 @@
 }
 .searchbar {
 	display: flex;
+	position: relative;
 	@media (max-width: vars.$smallScreen) {
 		flex-direction: column;
 		justify-content: space-between;
@@ -70,8 +71,14 @@
 			height: 32px;
 			left: 40px;
 			filter: invert(99%) sepia(0%) saturate(2467%) hue-rotate(69deg) brightness(117%) contrast(100%);
-
 		}
+	}
 
+	&__error {
+		position: absolute;
+		top: -22px;
+		left: 0;
+		font-size: 16px;
+		color: vars.$blue;
 	}
 }
