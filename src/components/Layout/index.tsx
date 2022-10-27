@@ -2,13 +2,29 @@ import { Outlet } from 'react-router-dom';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
 import { Menu } from '../Menu';
+import { SideBar } from '../SideBar';
+import { useState } from 'react';
+
+export interface IMenuProps {
+  isOpened: boolean;
+  toggleMenu: () => void;
+}
 
 export function Layout() {
+  const [isOpened, setIsOpened] = useState(true);
+  const toggleMenu = () => {
+    setIsOpened(!isOpened);
+  };
   return (
     <>
-      <Header></Header>
+      <Header isOpened={isOpened} toggleMenu={toggleMenu} />
       <main className="main">
-        <Menu />
+        <SideBar />
+        {isOpened && (
+          <div className="burger-menu">
+            <Menu />
+          </div>
+        )}
         <div className="page">
           <Outlet />
         </div>

@@ -1,4 +1,9 @@
+@use '../../styles/vars';
+
 .main {
 	display: grid;
 	grid-template-columns: 300px auto;
+	@media (max-width: vars.$mediumScreen) {
+		display: block;
+	}
 }
