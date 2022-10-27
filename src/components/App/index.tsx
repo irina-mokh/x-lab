@@ -11,7 +11,7 @@ import { SettingsUserPage } from '../../pages/SettingsUserPage';
 import { SettingsFinancePage } from '../../pages/SettingsFinancePage';
 export const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <h1 className="visually-hidden">Wrench CRM</h1>
       <Router>
         <Routes>

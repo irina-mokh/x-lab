@@ -1,0 +1,26 @@
+@use '../../styles/vars';
+
+.app {
+	.page {
+		padding: 32px;
+
+		&__heading {
+			margin-bottom: 16px;
+			font-size: 26px;
+			font-family: 'Montserrat-Bold';
+		}
+
+		&__subheading {
+			margin-bottom: 24px;
+			font-weight: 500;
+			font-size: 20px;
+		}
+
+		&__text {
+			margin-bottom: 22px;
+			font-weight: 500;
+			line-height: 24.38px;
+			color: vars.$black;
+		}
+	}
+}

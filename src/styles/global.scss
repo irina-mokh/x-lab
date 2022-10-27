@@ -36,25 +36,3 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-.page {
-  padding: 32px;
-  &__heading {
-    margin-bottom: 16px;
-    font-size: 26px;
-    font-family: 'Montserrat-Bold';
-  }
-  &__subheading {
-    font-weight: 500;
-    margin-bottom: 24px;
-    font-size: 20px;
-  }
-  &__text {
-    font-weight: 500;
-    line-height: 24.38px;
-    margin-bottom: 22px;
-    color: vars.$black;
-  }
-}
-
-

@@ -10,6 +10,7 @@
 	@media (max-width: vars.$mediumScreen) {
 		display: block;
 	}
+	
 	&_active {
 		.hamburger__lines {
 			background: transparent;  
@@ -22,8 +23,8 @@
 				transform: rotate(-45deg) translate(5px, -9px);
 			}
 		}
-		
 	}
+
 	&__lines {
 		position: relative;
     display: block;
@@ -31,6 +32,7 @@
     height: 4px;
     background: vars.$white;
     transition: all .2s ease-in-out;
+
 		&:before, &:after {
       position: absolute;
       background: vars.$white;
@@ -39,6 +41,7 @@
       height: 4px;
       transition: all .2s ease-in-out;
     }
+
 		&:before {
       top: -10px;
     }

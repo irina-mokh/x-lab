@@ -1,4 +1,5 @@
 @use '../../styles/vars';
+
 .addresspage {
 	&__subheading {
 		margin: 0 0 16px 0;
@@ -6,39 +7,49 @@
 		line-height: 32px;
 		font-size: 26px;
 	}
+
 	&__results {
 		padding: 24px;
 		box-shadow: 0px 2px 8px rgba(2, 0, 97, 0.25);
 		border-radius: 10px;
 	}
+
 	&__result {
 		list-style: none;
 	}
 }
+
 .searchbar {
 	display: flex;
 	position: relative;
+	width: 100%;
+	height: 70px;
+	margin: 24px 0 32px 0;
 	@media (max-width: vars.$smallScreen) {
 		flex-direction: column;
 		justify-content: space-between;
 		height: 150px;
 	}
-	width: 100%;
-	height: 70px;
-	margin: 24px 0 32px 0;
+
 	&__field {
 		height: 70px;
 		flex-grow: 1;
-		@media (max-width: vars.$smallScreen) {
-			flex-grow: 0;
-			margin-bottom: 20px;
-		}
+		padding: 0 24px;
 		border: 3px solid vars.$blue;
 		border-radius: 10px;
 		font-family: inherit;
 		font-size: inherit;
-		padding: 0 24px;
 		outline: none;
+		transition: background-color 0.2s ease;
+		@media (max-width: vars.$smallScreen) {
+			flex-grow: 0;
+			margin-bottom: 20px;
+		}
+
+		&:focus {
+			background: vars.$extra-light-blue; 
+		}
+
 		&::-webkit-search-decoration,
 		&::-webkit-search-cancel-button,
 		&::-webkit-search-results-button,
@@ -48,11 +59,9 @@
 	}
 	
 	&__btn {
+		cursor: pointer;
 		height: 70px;
 		margin: 0 0 0 24px;
-		@media (max-width: vars.$smallScreen) {
-			margin: 0;
-		}
 		padding: 8px 40px 8px 88px;
 		border-radius: 10px;
 		border: none;
@@ -61,6 +70,19 @@
 		font-family: 'Montserrat-Bold';
 		background-color: vars.$blue;
 		position: relative;
+		transition: background-color 0.2s ease;
+
+		@media (max-width: vars.$smallScreen) {
+			margin: 0;
+		}
+
+		&:hover {
+			background-color: vars.$light-blue;
+		}
+		&:active {
+			background-color: vars.$dark-blue;
+		}
+
 		&::before {
 			content: '';
 			background:  url('../../assets/icons/search.svg');
